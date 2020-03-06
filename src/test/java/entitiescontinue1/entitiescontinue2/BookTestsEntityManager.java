@@ -1,7 +1,7 @@
 package entitiescontinue1.entitiescontinue2;
 
 import entitiescontinue1.entitiescontinue2.beans.Book;
-import entitiescontinue1.entitiescontinue2.repository.BookRepository;
+import entitiescontinue1.entitiescontinue2.repository.BookRepositoryEntityManager;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,17 +11,17 @@ import java.util.List;
 
 @SpringBootTest
 @ActiveProfiles(profiles = "dev")
-class BookTests {
+class BookTestsEntityManager {
 
     @Autowired
-    private BookRepository repository;
+    private BookRepositoryEntityManager repository;
 
     @Test
     void contextLoads() { }
 
     @Test
     void createBook(){
-//        Book book = repository.save(new Book("Lord of the rings"));
+//        Book book = repository.save(new Book("to delete"));
 //        System.out.println(book);
     }
 
@@ -61,6 +61,32 @@ class BookTests {
     @Test
     void findHarry(){
         System.out.println(repository.findHarry());
+    }
+
+    @Test
+    void delete(){
+//        Book book = repository.delete(2L);
+//        System.out.println(book);
+    }
+
+    @Test
+    void playground(){
+//        repository.createAndUpdate("Keif ba Luna Park");
+    }
+
+    @Test
+    void gokuDetach(){
+//        repository.createDetach();
+    }
+
+    @Test
+    void clearDetach(){
+//        repository.createClear();
+    }
+
+    @Test
+    void refresh(){
+        repository.createRefresh();
     }
 
 }

@@ -4,13 +4,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "book")
-@NamedQueries({
-        @NamedQuery(name = "find_all", query = "select b from Book b"),
-        @NamedQuery(
-                name = "find_harry_potter",
-                query = "select b from Book b where b.name = 'harry potter'"
-        )
-})
+//@NamedQueries({
+//        @NamedQuery(name = "find_all", query = "select b from Book b"),
+//        @NamedQuery(
+//                name = "find_harry_potter",
+//                query = "select b from Book b where b.name = 'harry potter'"
+//        )
+//})
 public class Book {
 
     @Id
@@ -18,7 +18,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
     public Book() {
